@@ -203,3 +203,40 @@ function mostrarSegundoAlerta() {
 
 // Quando a página carregar, inicia a sequência de alertas
 window.addEventListener('DOMContentLoaded', exibirAlertasSequenciais);
+
+// ======================= NOVO CÓDIGO ADICIONADO =======================
+// questao03.js - Entrada e saída de dados para 3 alunos
+
+function processarAlunos() {
+  for (let i = 1; i <= 3; i++) {
+    // 1. Receber a string com o nome do aluno
+    let nome = prompt(`Aluno ${i}: Digite o nome do aluno:`);
+
+    // 2. Receber um número inteiro (primeira nota)
+    let nota1 = parseInt(prompt(`Aluno ${i} (${nome}): Digite a primeira nota (valor inteiro):`));
+
+    // 3. Receber um número real (segunda nota)
+    let nota2 = parseFloat(prompt(`Aluno ${i} (${nome}): Digite a segunda nota (valor real):`));
+
+    // 4. Valor da multiplicação da primeira nota por 0.6
+    let mult1 = nota1 * 0.6;
+
+    // 5. Valor da multiplicação da segunda nota por 0.4
+    let mult2 = nota2 * 0.4;
+
+    // 6. Soma das duas multiplicações
+    let notaTotal = mult1 + mult2;
+
+    // 7. Alerta com nome e notas individuais
+    alert(`Aluno: ${nome}\nNota 1: ${nota1}\nNota 2: ${nota2}`);
+
+    // 8. Alerta com a nota total do aluno
+    alert(`Aluno: ${nome}\nNota total (após pesos): ${notaTotal.toFixed(2)}`);
+  }
+
+  // Mensagem final indicando que os 3 alunos foram processados
+  alert("Dados dos 3 alunos exibidos com sucesso!");
+}
+
+// Executa a função ao carregar a página
+window.onload = processarAlunos;
