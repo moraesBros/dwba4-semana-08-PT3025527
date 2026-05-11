@@ -7,7 +7,7 @@
   
   <!-- Região JavaScript no cabeçalho (head) -->
   <script>
-    // Função para exibir o alerta personalizado (fundo preto, letras brancas)
+    // Função para exibir o alerta personalizado (fundo preto, letras brancas, duas linhas)
     function mostrarAlertaPersonalizado() {
       // Cria a estrutura do modal dinamicamente
       const modal = document.createElement('div');
@@ -37,13 +37,15 @@
       caixa.style.minWidth = '250px';
       caixa.style.border = '1px solid #333';
       
-      // Mensagem do alerta
+      // Mensagem do alerta com duas linhas (usando <br>)
       const mensagem = document.createElement('p');
-      mensagem.textContent = 'dwba4-semana-08-PT3025527-ednilton Alerta: Questão 01';
       mensagem.style.fontSize = '18px';
       mensagem.style.margin = '0 0 20px 0';
       mensagem.style.fontWeight = 'bold';
       mensagem.style.color = '#ffffff'; // garante branco
+      mensagem.style.lineHeight = '1.5';
+      // Conteúdo em duas linhas:
+      mensagem.innerHTML = 'dwba4-semana-08-PT3025527-ednilton<br>Alerta: Questão 01';
       
       // Botão OK
       const botaoOk = document.createElement('button');
