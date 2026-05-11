@@ -1,7 +1,5 @@
-// script.js - Comportamento JavaScript unificado (index.html e questao01.html)
-
-// ==================== FUNÇÃO DO ALERTA PERSONALIZADO (Questão 01) ====================
-function mostrarAlertaPersonalizado() {
+// ==================== FUNÇÃO DO ALERTA PERSONALIZADO (Dinâmico) ====================
+function mostrarAlertaPersonalizado(numeroQuestao) {
   // Cria a estrutura do modal dinamicamente
   const modal = document.createElement('div');
   modal.id = 'customAlert';
@@ -30,14 +28,14 @@ function mostrarAlertaPersonalizado() {
   caixa.style.minWidth = '250px';
   caixa.style.border = '1px solid #333';
   
-  // Mensagem do alerta com duas linhas (usando <br>)
+  // Mensagem do alerta com duas linhas (número da questão dinâmico)
   const mensagem = document.createElement('p');
   mensagem.style.fontSize = '18px';
   mensagem.style.margin = '0 0 20px 0';
   mensagem.style.fontWeight = 'bold';
   mensagem.style.color = '#ffffff';
   mensagem.style.lineHeight = '1.5';
-  mensagem.innerHTML = 'dwba4-semana-08-PT3025527-ednilton<br>Alerta: Questão 01';
+  mensagem.innerHTML = `dwba4-semana-08-PT3025527-ednilton<br>Alerta: Questão ${numeroQuestao}`;
   
   // Botão OK
   const botaoOk = document.createElement('button');
@@ -52,6 +50,7 @@ function mostrarAlertaPersonalizado() {
   botaoOk.style.fontWeight = 'bold';
   botaoOk.style.transition = '0.2s';
   
+  // Efeito hover no botão
   botaoOk.onmouseover = () => {
     botaoOk.style.backgroundColor = '#dddddd';
   };
@@ -59,13 +58,17 @@ function mostrarAlertaPersonalizado() {
     botaoOk.style.backgroundColor = '#ffffff';
   };
   
+  // Fechar modal ao clicar no botão
   botaoOk.onclick = () => {
     document.body.removeChild(modal);
   };
   
+  // Monta a caixa
   caixa.appendChild(mensagem);
   caixa.appendChild(botaoOk);
   modal.appendChild(caixa);
+  
+  // Adiciona o modal ao body
   document.body.appendChild(modal);
 }
 
@@ -88,10 +91,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // 2. Configura os logs de clique nos links do menu (funciona em qualquer página)
   configurarCliqueNosLinks();
 
-  // 3. Se a página contiver a div .questao-container (usada na Questão 01), exibe o alerta personalizado
+  // 3. Verifica se há um container de questão
   const questaoContainer = document.querySelector('.questao-container');
   if (questaoContainer) {
-    mostrarAlertaPersonalizado();
-    console.log('Alerta personalizado exibido (Questão 01)');
+    // Tenta extrair o número da questão do texto do h1 dentro do container
+    const titulo = questaoContainer.querySelector('h1');
+    let numeroQuestao = 'desconhecido';
+    if (titulo) {
+      const match = titulo.textContent.match(/\d+/);
+      if (match) {
+        numeroQuestao = match[0];
+      }
+    }
+    mostrarAlertaPersonalizado(numeroQuestao);
+    console.log(`Alerta personalizado exibido (Questão ${numeroQuestao})`);
   }
 });
