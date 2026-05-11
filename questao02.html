@@ -5,9 +5,9 @@
   <title>dwba4-semana-08-PT3025527-ednilton</title>
   <link rel="shortcut icon" href="image/favicon.ico" type="x-icon">
   
-  <!-- Região JavaScript no cabeçalho (head) -->
+  <!-- JavaScript no cabeçalho -->
   <script>
-    // Função para exibir o alerta personalizado (fundo preto, letras brancas)
+    // Função para exibir o alerta personalizado (fundo preto, letras brancas, duas linhas)
     function mostrarAlertaPersonalizado() {
       // Cria a estrutura do modal dinamicamente
       const modal = document.createElement('div');
@@ -37,14 +37,15 @@
       caixa.style.minWidth = '250px';
       caixa.style.border = '1px solid #333';
       
-      // Mensagem do alerta
+      // Mensagem do alerta com duas linhas
       const mensagem = document.createElement('p');
-      mensagem.textContent = 'dwba4-semana-08-PT3025527-ednilton';
-      mensagem.textContent = 'Alerta: Questão 01';
       mensagem.style.fontSize = '18px';
       mensagem.style.margin = '0 0 20px 0';
       mensagem.style.fontWeight = 'bold';
       mensagem.style.color = '#ffffff'; // garante branco
+      mensagem.style.lineHeight = '1.5';
+      // Conteúdo em duas linhas:
+      mensagem.innerHTML = 'dwba4-semana-08-PT3025527-ednilton<br>Alerta: Questão 02';
       
       // Botão OK
       const botaoOk = document.createElement('button');
@@ -151,9 +152,9 @@
   </header>
 
   <main>
-    <!-- DIV contendo o título h1 "Questão 01" conforme solicitado -->
+    
     <div class="questao-container">
-      <h1>Questão 01</h1>
+      <h1>Questão 02</h1>
     </div>
     
     <!-- Link de voltar preservado -->
