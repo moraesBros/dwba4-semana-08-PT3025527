@@ -1,5 +1,3 @@
-/* style.css - Estilos globais da página (incluindo suporte para .questao-container) */
-
 body {
   margin: 0;
   padding: 0;
@@ -22,10 +20,9 @@ nav a {
   text-decoration: none;
   margin-right: 15px;
   position: relative;
-  padding-left: 25px; /* espaço para o ícone */
+  padding-left: 25px;
 }
 
-/* pasta antes de todos os links do header */
 nav a::before {
   content: "";
   position: absolute;
@@ -48,7 +45,6 @@ main {
   padding: 20px;
 }
 
-/* Estilo adicional específico para containers de questões (ex.: usado em questao01.html) */
 .questao-container {
   margin-bottom: 20px;
 }
