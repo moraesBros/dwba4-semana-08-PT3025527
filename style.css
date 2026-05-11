@@ -1,4 +1,4 @@
-/* style.css - Todos os estilos da página */
+/* style.css - Estilos globais da página (incluindo suporte para .questao-container) */
 
 body {
   margin: 0;
@@ -46,4 +46,9 @@ nav a:hover {
 main {
   margin-top: 60px;
   padding: 20px;
+}
+
+/* Estilo adicional específico para containers de questões (ex.: usado em questao01.html) */
+.questao-container {
+  margin-bottom: 20px;
 }
