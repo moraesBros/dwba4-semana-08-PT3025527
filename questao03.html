@@ -87,7 +87,7 @@
     
     // Função que exibe o primeiro alerta e, ao fechá-lo, mostra o segundo
     function exibirAlertasSequenciais() {
-      // Primeiro alerta (duas linhas)
+      // Primeiro alerta (com as notas 1 e 2)
       const primeiraMensagem = 'dwba4-semana-08-PT3025527-ednilton<br>Nome do aluno: Ednilton Moraes<br>Nota 1: 7<br>Nota 2: 7.6';
       
       // Cria o primeiro modal manualmente, pois precisamos de um callback específico
@@ -150,7 +150,7 @@
       document.body.appendChild(modal);
     }
     
-    // Função para exibir o segundo alerta (simples, com a mensagem "segundo alerta")
+    // Função para exibir o segundo alerta com a mensagem solicitada (Nota final)
     function mostrarSegundoAlerta() {
       const modal = document.createElement('div');
       modal.style.position = 'fixed';
@@ -181,8 +181,9 @@
       mensagem.style.fontWeight = 'bold';
       mensagem.style.color = '#ffffff';
       mensagem.style.lineHeight = '1.5';
-      // Mensagem do segundo alerta conforme solicitado
-      // mensagem.innerHTML = 'dwba4-semana-08-PT3025527-ednilton<br>Nome do aluno: Ednilton Moraes<br>Nota Final: 7.6000000000000005';
+      
+      // Mensagem do segundo alerta conforme solicitado:
+      mensagem.innerHTML = 'dwba4-semana-08-PT3025527-ednilton<br>Nome do aluno: Ednilton Moraes<br>Nota final: 7.6000000000000005';
       
       const botaoOk = document.createElement('button');
       botaoOk.textContent = 'OK';
